@@ -15,16 +15,11 @@ from ..models import *
 @main.route('/index')
 def index_views():
     categories = Category.query.all()
-    print(categories)
     topics = Topic.query.filter(Topic.images.isnot(None)).order_by('read_num desc').limit(5).all()
-    print(topics)
     topicList = Topic.query.order_by('pub_date desc').all()
+    print(topicList)
     return render_template('index.html', params=locals())
 
-
-@main.route('/test')
-def test_1():
-    print('这是测试数据')
 
 # 登录的路径
 @main.route('/login', methods=["GET", 'POST'])
