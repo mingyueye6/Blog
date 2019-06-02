@@ -15,9 +15,9 @@ from ..models import *
 @main.route('/index')
 def index_views():
     categories = Category.query.all()
-    topics = Topic.query.filter(Topic.images.isnot(None)).order_by('read_num desc').limit(5).all()
-    topicList = Topic.query.order_by('pub_date desc').all()
-    print(topicList)
+    topics = Topic.query.filter(Topic.images.isnot(None)).order_by(Topic.read_num.desc()).limit(5).all()
+    topicList = Topic.query.order_by(Topic.pub_date.desc()).all()
+    # print(topicList)
     return render_template('index.html', params=locals())
 
 
