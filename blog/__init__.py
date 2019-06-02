@@ -14,7 +14,7 @@ db = SQLAlchemy()
 def create_app():
     app = Flask(__name__)
     # app.config['DEBUG'] = True
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:00000000@127.0.0.1:3306/Blog'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:123456@127.0.0.1:3306/blog_db'
     app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
     app.config['SECRET_KEY'] = 'you guess'
     db.init_app(app)
